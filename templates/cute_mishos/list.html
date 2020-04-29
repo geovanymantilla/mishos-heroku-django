@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+<div class="notification is-primary is-light">
+  {{ message }}
+</div>
+{% endfor %}
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Mishos
+    </h1>
+    <p class="subtitle">
+      ¡Disfruta de esta colección de mishos!
+    </p>
+  </div>
+</section>
+<section class="section">
+  <div class="container columns is-vcentered is-multiline">
+    {% for misho in cutemisho_list %}
+    <div class="column is-6">
+      <div class="box">
+        <figure class="image misho">
+          <img src="{{ misho.get_image_url }}" alt="{{ misho.name }} image">
+          <h2 class="title is-4">{{ misho.name }}</h2>
+        </figure>
+      </div>
+    </div>
+    {% endfor %}
+      
+  </div>
+</section>
+{% endblock content %}
+  

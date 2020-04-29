@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      Creador de mishos
+    </h1>
+    <p class="subtitle">
+      Dale vida a un misho
+    </p>
+  </div>
+  <div class="container form-container">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="field">
+        <label class="label">Nombre:</label>
+        <div class="control">
+          <input class="input" name="name" type="text" maxlength="70" required />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Mensaje:</label>
+        <div class="control">
+          <input class="input" name="message" type="text" maxlength="200" required />
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button is-link is-light">Crear</button>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="section">
+</section>
+{% endblock content %}
+  
