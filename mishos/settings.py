@@ -4,6 +4,8 @@ Django settings for mishos project.
 
 import os
 
+import django_heroku
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get(
@@ -107,3 +109,7 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Django-Heroku.
+
+django_heroku.settings(locals())
